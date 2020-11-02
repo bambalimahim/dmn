@@ -1,0 +1,35 @@
+{
+  "name": "Materiel",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "appartenance",
+      "otherEntityRelationshipName": "materiel",
+      "relationshipName": "appartenance"
+    }
+  ],
+  "changelogDate": "20201102160544",
+  "entityTableName": "materiel",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

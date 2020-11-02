@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="commission">
+            <h2><span jhiTranslate="gestionStockApp.commission.detail.title">Commission</span> {{ commission.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestionStockApp.commission.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ commission.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionStockApp.commission.code">Code</span></dt>
+                <dd>
+                    <span>{{ commission.code }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/commission', commission.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

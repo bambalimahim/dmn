@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-appartenance-heading" jhiTranslate="gestionStockApp.appartenance.home.createOrEditLabel">Create or edit a Appartenance</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionStockApp.appartenance.designation" for="field_designation">Designation</label>
+                    <input type="text" class="form-control" name="designation" id="field_designation"
+                           formControlName="designation"/>
+                    <div *ngIf="editForm.get('designation')!.invalid && (editForm.get('designation')!.dirty || editForm.get('designation')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('designation')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionStockApp.appartenance.commission" for="field_commission">Commission</label>
+                    <select class="form-control" id="field_commission" name="commission" formControlName="commission">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="commissionOption.id === editForm.get('commission')!.value?.id ? editForm.get('commission')!.value : commissionOption" *ngFor="let commissionOption of commissions; trackBy: trackById">{{ commissionOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionStockApp.appartenance.materiel" for="field_materiel">Materiel</label>
+                    <select class="form-control" id="field_materiel" name="materiel" formControlName="materiel">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="materielOption.id === editForm.get('materiel')!.value?.id ? editForm.get('materiel')!.value : materielOption" *ngFor="let materielOption of materiels; trackBy: trackById">{{ materielOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
