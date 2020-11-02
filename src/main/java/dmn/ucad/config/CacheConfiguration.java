@@ -47,6 +47,11 @@ public class CacheConfiguration {
             createCache(cm, dmn.ucad.domain.User.class.getName());
             createCache(cm, dmn.ucad.domain.Authority.class.getName());
             createCache(cm, dmn.ucad.domain.User.class.getName() + ".authorities");
+            createCache(cm, dmn.ucad.domain.Materiel.class.getName());
+            createCache(cm, dmn.ucad.domain.Materiel.class.getName() + ".appartenances");
+            createCache(cm, dmn.ucad.domain.Commission.class.getName());
+            createCache(cm, dmn.ucad.domain.Commission.class.getName() + ".appartences");
+            createCache(cm, dmn.ucad.domain.Appartenance.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,24 @@
+{
+  "gestionStockApp": {
+    "commission": {
+      "home": {
+        "title": "Commissions",
+        "createLabel": "Créer un nouveau Commission",
+        "createOrEditLabel": "Créer ou éditer un Commission",
+        "notFound": "Aucun Commission trouvé"
+      },
+      "created": "Un nouveau Commission a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Commission avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Commission avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Commission {{ id }} ?"
+      },
+      "detail": {
+        "title": "Commission"
+      },
+      "nom": "Nom",
+      "code": "Code",
+      "appartence": "Appartence"
+    }
+  }
+}

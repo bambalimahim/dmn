@@ -1,0 +1,24 @@
+{
+  "gestionStockApp": {
+    "appartenance": {
+      "home": {
+        "title": "Appartenances",
+        "createLabel": "Créer un nouveau Appartenance",
+        "createOrEditLabel": "Créer ou éditer un Appartenance",
+        "notFound": "Aucun Appartenance trouvé"
+      },
+      "created": "Un nouveau Appartenance a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Appartenance avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Appartenance avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Appartenance {{ id }} ?"
+      },
+      "detail": {
+        "title": "Appartenance"
+      },
+      "designation": "Designation",
+      "commission": "Commission",
+      "materiel": "Materiel"
+    }
+  }
+}
