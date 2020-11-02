@@ -1,0 +1,23 @@
+entity Materiel {
+	code String required,
+    libelle String
+}
+
+entity Commission {
+	nom String required,
+    code String
+}
+
+entity Appartenance {
+	designation String required
+}
+
+
+relationship OneToMany {
+	Commission{appartence} to Appartenance{commission},
+    Materiel{appartenance} to Appartenance{materiel}
+}
+
+// Set pagination options
+paginate Materiel, Commission, Appartenance with pagination
+

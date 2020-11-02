@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="appartenance">
+            <h2><span jhiTranslate="gestionStockApp.appartenance.detail.title">Appartenance</span> {{ appartenance.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestionStockApp.appartenance.designation">Designation</span></dt>
+                <dd>
+                    <span>{{ appartenance.designation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionStockApp.appartenance.commission">Commission</span></dt>
+                <dd>
+                    <div *ngIf="appartenance.commission">
+                        <a [routerLink]="['/commission', appartenance.commission?.id, 'view']">{{ appartenance.commission?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gestionStockApp.appartenance.materiel">Materiel</span></dt>
+                <dd>
+                    <div *ngIf="appartenance.materiel">
+                        <a [routerLink]="['/materiel', appartenance.materiel?.id, 'view']">{{ appartenance.materiel?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/appartenance', appartenance.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

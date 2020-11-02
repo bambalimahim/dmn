@@ -1,0 +1,39 @@
+{
+  "name": "Appartenance",
+  "fields": [
+    {
+      "fieldName": "designation",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commission",
+      "otherEntityRelationshipName": "appartence",
+      "relationshipName": "commission",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "materiel",
+      "otherEntityRelationshipName": "appartenance",
+      "relationshipName": "materiel",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201102161507",
+  "entityTableName": "appartenance",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
